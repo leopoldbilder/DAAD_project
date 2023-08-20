@@ -22,7 +22,7 @@ pair_modify shift yes mix arithmetic
 fix nvt all langevin 300 300 100.0 6138895 gjf vfull
 fix nve all nve
 dump xtc all xtc 1000 PMAA.xtc 
-thermo		1000
-timestep 10.0
-run		100000
+thermo		100000
+timestep 2.0
+run		10000000
 write_data PMAA.data
