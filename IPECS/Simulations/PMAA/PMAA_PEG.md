@@ -3,7 +3,7 @@ units real
 boundary p p p
 atom_style full
 region mybox block -500.000000 500.000000 -500.000000 500.000000 -500.000000 500.000000
-create_box 3 mybox bond/types 2 angle/types 0 dihedral/types 0 extra/special/per/atom 20 extra/bond/per/atom 20 extra/angle/per/atom 20
+create_box 3 mybox bond/types 2 angle/types 2 dihedral/types 0 extra/special/per/atom 20 extra/bond/per/atom 20 extra/angle/per/atom 20
 #variable string MAA type 1
 #variable Na type 2
 molecule pol PMAA_PEG.mol
@@ -15,7 +15,6 @@ dielectric 81.2
 bond_style harmonic
 bond_coeff 1 0.690 3.492
 bond_coeff 2 0.46 5.414
-
 pair_style lj/cut/coul/long 4.568 500.0
 pair_coeff 1 1 0.596 3.6 4.04 #PMAA atoms
 pair_coeff 2 2 0.596 3.6 4.04 #PEG/PEO atoms
@@ -34,5 +33,5 @@ fix nve all nve
 dump xtc all xtc 1000 PMAA_PEG.xtc 
 thermo		100000
 timestep 2.0
-run		10000000
+run		50000000
 write_data PMAA_PEG.data
